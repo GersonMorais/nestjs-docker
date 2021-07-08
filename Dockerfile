@@ -23,6 +23,10 @@ COPY package*.json ./
 
 RUN npm install --only=production
 
+RUN npm install --save @nestjs/mongoose mongoose
+
+RUN npm install --save-dev @types/mongoose
+
 COPY . .
 
 COPY --from=development /usr/src/app/dist ./dist
